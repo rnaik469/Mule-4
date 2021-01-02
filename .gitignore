@@ -3,3 +3,4 @@
 .tooling
 .tooling-apps-cache
 **/target
+.git
