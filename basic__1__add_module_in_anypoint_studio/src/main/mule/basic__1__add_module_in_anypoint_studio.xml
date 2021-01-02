@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:mft="http://www.mulesoft.org/schema/mule/mft" xmlns:s3="http://www.mulesoft.org/schema/mule/s3"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/s3 http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+http://www.mulesoft.org/schema/mule/mft http://www.mulesoft.org/schema/mule/mft/current/mule-mft.xsd">
+	<mft:config name="MFT_Config" doc:name="MFT Config" doc:id="29c23bdd-d452-40fa-be92-d4a0a9888d37" >
+		<mft:mft-connection APIUrl="a" StorageRepository="a" SiteKey="a" FlowSecret="a" Timeout="100" />
+	</mft:config>
+	<s3:config name="Amazon_S3_Configuration" doc:name="Amazon S3 Configuration" doc:id="a1641868-e8fe-404a-b516-b04b40a65d3c" >
+		<s3:basic-connection accessKey="a" secretKey="a" />
+	</s3:config>
+	<flow name="basic__1__add_module_in_anypoint_studioFlow" doc:id="92af120e-2264-4e8a-9f53-a27726336c3b" >
+		<s3:copy-object doc:name="Copy object" doc:id="20d2942c-815a-404d-9ae3-f575bc779c32" config-ref="Amazon_S3_Configuration" sourceBucketName="a" sourceKey="a" sourceVersionId="a" destinationBucketName="a" destinationKey="a" destinationAcl="PUBLIC_READ_WRITE"/>
+	</flow>
+	<flow name="basic__1__add_module_in_anypoint_studioFlow1" doc:id="50bf5575-8e6b-43cb-9ac0-961273d5fe72" >
+		<mft:file-metadata doc:name="File Metadata" doc:id="c62849df-df78-4ee4-9a7a-b448d0968966" config-ref="MFT_Config" fileCode="a"/>
+	</flow>
+</mule>
