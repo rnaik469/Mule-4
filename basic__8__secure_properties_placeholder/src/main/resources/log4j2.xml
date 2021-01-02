@@ -9,8 +9,8 @@
         see them in the mule_ee.log file. -->
 
     <Appenders>
-        <RollingFile name="file" fileName="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}dw.log" 
-                 filePattern="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}dw-%i.log">
+        <RollingFile name="file" fileName="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}basic__8__secure_properties_placeholder.log" 
+                 filePattern="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}basic__8__secure_properties_placeholder-%i.log">
             <PatternLayout pattern="%-5p %d [%t] [event: %X{correlationId}] %c: %m%n" />
             <SizeBasedTriggeringPolicy size="10 MB" />
             <DefaultRolloverStrategy max="10"/>
