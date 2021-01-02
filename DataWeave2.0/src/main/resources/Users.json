@@ -1,0 +1,43 @@
+{
+  "users": [{
+  "id": "101",
+  "doj": "2018-01-01",
+  "taxId": "SR090459009",
+  "personDetails": {
+    "email": "user1@loginusers101.com", 
+    "phone": "101-101-1001"
+  },
+  "emplDetails": {
+    "title": "Accountant",
+    "department": "",
+    "salary": 60000
+  }
+}, {
+  "id": "202",
+  "doj": "2010-01-01",
+  "taxId": "YU1209120900",
+  "personDetails": {
+    "email": "user2@loginusers101.com",
+    "phone": "202-202-2002"
+  },
+  "emplDetails": {
+    "title": "Analyst",
+    "department": "Business Services",
+    "salary": 70000
+  }
+}, {
+  "id": "303",
+  "doj": "2000-01-01",
+  "taxId": "NB56932000",
+  "personDetails": {
+    "email": "user3@loginusers101.com",
+    "phone": "303-303-3003"
+  },
+  "emplDetails": {
+    "title": "Architect",
+    "department": "IT Services",
+    "salary": 0 
+  }
+}]
+
+}

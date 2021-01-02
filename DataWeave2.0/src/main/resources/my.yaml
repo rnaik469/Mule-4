@@ -1,0 +1,5 @@
+ftp:
+  host:"localhost"
+  port:"990"
+  un:"rn"
+  pass:"123"

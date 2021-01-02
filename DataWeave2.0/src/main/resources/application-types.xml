@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="users" format="json">
+      <types:shape format="weave" example="examples/Users.json"><![CDATA[%dw 2.0
+
+type users = {|
+  users: Array<{|    id: String,     doj: String,     taxId: String,     personDetails: {|      email: String,       phone: String    |},     emplDetails: {|      title: String,       department: String,       salary: Number {"typeId": "int"}    |}  |}>
+|} {"example": "{\\\"users\\\":[{\\\"id\\\":\\\"101\\\",\\\"doj\\\":\\\"2018-01-01\\\",\\\"taxId\\\":\\\"SR090459009\\\",\\\"personDetails\\\":{\\\"email\\\":\\\"user1@loginusers101.com\\\",\\\"phone\\\":\\\"101-101-1001\\\"},\\\"emplDetails\\\":{\\\"title\\\":\\\"Accountant\\\",\\\"department\\\":\\\"\\\",\\\"salary\\\":60000}},{\\\"id\\\":\\\"202\\\",\\\"doj\\\":\\\"2010-01-01\\\",\\\"taxId\\\":\\\"YU1209120900\\\",\\\"personDetails\\\":{\\\"email\\\":\\\"user2@loginusers101.com\\\",\\\"phone\\\":\\\"202-202-2002\\\"},\\\"emplDetails\\\":{\\\"title\\\":\\\"Analyst\\\",\\\"department\\\":\\\"Business Services\\\",\\\"salary\\\":70000}},{\\\"id\\\":\\\"303\\\",\\\"doj\\\":\\\"2000-01-01\\\",\\\"taxId\\\":\\\"NB56932000\\\",\\\"personDetails\\\":{\\\"email\\\":\\\"user3@loginusers101.com\\\",\\\"phone\\\":\\\"303-303-3003\\\"},\\\"emplDetails\\\":{\\\"title\\\":\\\"Architect\\\",\\\"department\\\":\\\"IT Services\\\",\\\"salary\\\":0}}]}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="UserOPModel" format="java">
+      <types:shape format="java" element="dw.UserOutputModel"/>
+    </types:type>
+    <types:type name="in" format="xml">
+      <types:example format="xml" element="root" location="examples/New Text Document.xml"/>
+    </types:type>
+    <types:type name="out" format="xml">
+      <types:example format="xml" element="root" location="examples/new 56.xml"/>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#66686e8f-82ea-4424-be3d-df13c30d306a">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="users"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="UserOPModel"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#99cd7fd6-4b65-4be5-a4fe-a2722e715d65">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="in"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="out"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
