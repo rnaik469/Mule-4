@@ -15,6 +15,6 @@ http://www.mulesoft.org/schema/mule/mft http://www.mulesoft.org/schema/mule/mft/
 		<s3:copy-object doc:name="Copy object" doc:id="20d2942c-815a-404d-9ae3-f575bc779c32" config-ref="Amazon_S3_Configuration" sourceBucketName="a" sourceKey="a" sourceVersionId="a" destinationBucketName="a" destinationKey="a" destinationAcl="PUBLIC_READ_WRITE"/>
 	</flow>
 	<flow name="basic__1__add_module_in_anypoint_studioFlow1" doc:id="50bf5575-8e6b-43cb-9ac0-961273d5fe72" >
-		<mft:file-metadata doc:name="File Metadata" doc:id="c62849df-df78-4ee4-9a7a-b448d0968966" config-ref="MFT_Config" fileCode="a"/>
+		<mft:file-metadata doc:name="File Metadata" doc:id="c62849df-df78-4ee4-9a7a-b448d0968966" config-ref="MFT_Config" fileCode="aa"/>
 	</flow>
 </mule>
